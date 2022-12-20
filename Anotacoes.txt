@@ -1,0 +1,8 @@
+COMANDOS PYTHON X SLQ
+
+import sqlite3 - importa a biblioteca com os comandos sqlite
+from sqlite3 import Error - importa as exceções do sqlite em caso de erro
+sqlite3.connect(caminho do banco de dados) - Vai realizar a conexão com o banco de dados
+cursor() - Vai ser o responsavel por puxar a conexão ao banco
+execute(query sql) - Vai ser responsável por armazenar a query de SQL
+close() - Vai ser responsável por finalizar a conexão
