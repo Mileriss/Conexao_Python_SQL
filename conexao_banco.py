@@ -12,6 +12,6 @@ def conexaoBanco():
         conexao = sqlite3.connect(caminho)
     except Error as ex:
         print(ex)
-        return conexao
+    return conexao
 
 var_conexao = conexaoBanco()
