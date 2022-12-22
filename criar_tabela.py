@@ -1,19 +1,14 @@
 import sqlite3
 from sqlite3 import Error
+from conexao_banco import variavel_conexao
+import os
 
-def conexaoBanco():
-    caminho = "C:\\Users\\s5057981\\OneDrive\\Documentos\\SQLite\\teste.db"
-    conexao = None
-    try:
-        conexao = sqlite3.connect(caminho)
-    except Error as excecao:
-        print(excecao)
-    return conexao
-
-variavel_conexao = conexaoBanco()
-
-nova_tabela = """
-CREATE TABLE tb_teste(
+os.system('cls')
+print("\nCRIAR TABELA\n")
+def criarTabela(conexao, sql):
+    global nova_tabela
+    nova_tabela = """
+    CREATE TABLE tb_formulario(
     N_ID integer NOT NULL PRIMARY KEY AUTOINCREMENT,
     T_Nome varchar(30) NOT NULL,
     T_Sobrenome varchar(30) NOT NULL,
@@ -21,12 +16,11 @@ CREATE TABLE tb_teste(
     T_Sexo varchar (20)
 )
 """
-
-def criarTabela(conexao, sql):
     try:
         conectar = conexao.cursor()
         conectar.execute(sql)
-        print("Tabela criada!")
+        print("\nTabela criada!\n")
+        os.system('pause'),os.system('cls')
     except Error as excecao:
         print(excecao)
     

@@ -2,7 +2,7 @@ import sqlite3
 from sqlite3 import Error
 
 def conexaoBanco():
-    caminho = "C:\\Users\\s5057981\\OneDrive\\Documentos\\SQLite\\teste.db"
+    caminho = "C:\\Users\\Rafael Mileris\\OneDrive\\SQLITE\\Bancos\\formulario.db"
     conexao = None
     try:
         conexao = sqlite3.connect(caminho)

@@ -1,18 +1,10 @@
 import sqlite3
 from sqlite3 import Error
+from conexao_banco import variavel_conexao
+import os
 
-def conexaoBanco():
-    caminho = "C:\\Users\\s5057981\\OneDrive\\Documentos\\SQLite\\teste.db"
-    conexao = None
-    try:
-        conexao = sqlite3.connect(caminho)
-    except Error as excecao:
-        print(excecao)
-    return conexao
-
-variavel_conexao = conexaoBanco()
-
-
+os.system('cls')
+print("\nCONSULTAR REGISTROS\n")
 def visualizarRegistro(conexao, sql):
     try:
         conectar = conexao.cursor()
@@ -22,9 +14,12 @@ def visualizarRegistro(conexao, sql):
         print(excecao)
     return resultado
     
-consultar_registros = "SELECT * FROM tb_teste"
+consultar_registros = "SELECT * FROM tb_formulario"
 resultado = visualizarRegistro(variavel_conexao, consultar_registros)
 
 for registro in resultado:
     print(f"- {registro}")
+
+print("\n\n")
+os.system('pause'),os.system('cls')
 
